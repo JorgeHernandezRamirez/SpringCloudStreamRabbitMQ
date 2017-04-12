@@ -1,0 +1,18 @@
+server:
+   port: 8082
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        itemsChannel:
+          binder: rabbit
+          destination: item.exchange
+          group: myqueue
+          contentType: application/json
+  rabbitmq:
+    host: 192.168.99.100
+    username: admin
+    password: admin
+    virtual-host: /
+    port: 5672
